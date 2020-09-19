@@ -3,6 +3,11 @@
 # 3. Predict Fuel Efficiency(Miles Per Gallon) using tensorflow
 # 4. Fashion MNIST ImageClassification Using CNN
 # 5. DogsVsCats without Augmentation using CNN
+# 6. DogsVsCats with Augmentation using CNN
+# 7. Flower Classification with Augmentation using CNN
+
+
+
 
 
 
