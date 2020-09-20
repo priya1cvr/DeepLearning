@@ -32,6 +32,7 @@ Max Pooling: When working with RGB images we perform max pooling on each color c
 
 Validation Set: We use a validation set to check how the model is doing during the training phase. Validation sets can be used to perform Early Stopping to prevent overfitting and can also be used to help us compare different models and choose the best one.
 
+## Transfer Learning
 We can use <b> Transfer Learning</b> to create very powerful Convolutional Neural Networks with very little effort. The main key points of this lesson are:
 
  - Transfer Learning: A technique that reuses a model that was created by machine learning experts and that has already been trained on a large dataset. When performing transfer learning we must always change the last layer of the pre-trained model so that it has the same number of classes that we have in the dataset we are working with.
@@ -39,3 +40,5 @@ We can use <b> Transfer Learning</b> to create very powerful Convolutional Neura
  - MobileNet: A state-of-the-art convolutional neural network developed by Google that uses a very efficient neural network architecture that minimizes the amount of memory and computational resources needed, while maintaining a high level of accuracy. MobileNet is ideal for mobile devices that have limited memory and computational resources.
  
 You also used transfer learning to create a Convolutional Neural Network that uses MobileNet to classify images of Dogs and Cats. You were able to see that transfer learning greatly improves the accuracy achieved in the Dogs and Cats dataset. 
+
+<b>Note:</b> fit_generator is used in cases where batches are coming from a generator (ImageDataGenerator) instead of fit.
