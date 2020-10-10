@@ -1,11 +1,13 @@
-# 1. Celsius to Fahrenheit using tensoflow
-# 2. Image Classification using Fashion MNIST dataset using tensorflow
-# 3. Predict Fuel Efficiency(Miles Per Gallon) using tensorflow
-# 4. Fashion MNIST ImageClassification Using CNN
-# 5. DogsVsCats without Augmentation using CNN
-# 6. DogsVsCats with Augmentation using CNN
-# 7. Flower Classification with Augmentation using CNN
-
+## 1. Celsius to Fahrenheit using tensoflow
+## 2. Image Classification using Fashion MNIST dataset using tensorflow
+## 3. Predict Fuel Efficiency(Miles Per Gallon) using tensorflow
+## 4. Fashion MNIST ImageClassification Using CNN
+## 5. DogsVsCats without Augmentation using CNN
+## 6. DogsVsCats with Augmentation using CNN
+## 7. Flower Classification with Augmentation using CNN
+## 8. Loading and Saving Models
+## 9.1 NLP Word Tokenization 
+## 9.2 NLP Word Embeddings
 
 
 
@@ -42,3 +44,30 @@ We can use <b> Transfer Learning</b> to create very powerful Convolutional Neura
 You also used transfer learning to create a Convolutional Neural Network that uses MobileNet to classify images of Dogs and Cats. You were able to see that transfer learning greatly improves the accuracy achieved in the Dogs and Cats dataset. 
 
 <b>Note:</b> fit_generator is used in cases where batches are coming from a generator (ImageDataGenerator) instead of fit.
+
+## Word Embeddings
+
+Embeddings are clusters of vectors in multi-dimensional space, where each vector represents a given word in those dimensions.
+To create our embeddings, we’ll first use an embeddings layer, called tf.keras.layers.Embedding
+It takes 3 Arguments:
+  - the size of the tokenized vocabulary, 
+  - the number of embedding dimensions to use, 
+  - the input length (from when you standardized sequence length with padding and truncation)
+
+The output of this layer needs to be reshaped to work with any fully-connected layers. It can be done with a pure Flatten layer, or use GlobalAveragePooling1D for a little additional computation that sometimes creates better results.
+In the example shown in notebook we’re only looking at positive vs. negative sentiment, so only a single output node is needed (0 for negative, 1 for positive). We’ll be able to use a binary cross entropy loss function since the result is only binary classification.
+
+
+## Some of the potential things you might tweak to better predict sentiment from text.
+Data and preprocessing-based approaches
+  - More data
+  - Adjusting vocabulary size (make sure to consider the overall size of the corpus!)
+  - Adjusting sequence length (more or less padding or truncation)
+  - Whether to pad or truncate pre or post (usually less of an effect than the others)
+  
+Model-based approaches
+  - Adjust the number of embedding dimensions
+  - Changing use of Flatten vs. GlobalAveragePooling1D
+  - Considering other layers like Dropout
+  - Adjusting the number of nodes in intermediate fully-connected layers
+
