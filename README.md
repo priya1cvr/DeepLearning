@@ -8,7 +8,7 @@
 ## 8. Loading and Saving Models
 ## 9.1 NLP Word Tokenization 
 ## 9.2 NLP Word Embeddings
-
+## 9.3 NLP Tweaking Models & SubWords
 
 
 
@@ -124,3 +124,11 @@ Model-based approaches
   - Considering other layers like Dropout
   - Adjusting the number of nodes in intermediate fully-connected layers
 
+## SubWords
+Pieces of words,often made up of smaller words ,that make words with similar roots be tokenized more similarly.<br/>
+This helps avoid marking very rare words as OOV when you use only the most common words in a corpus.<br/>
+This can further expose an issue affecting all of our models up to this point, in that they don’t understand the full context of the sequence of words in an input.
+
+Subword Datasets </b> </br>
+There are a number of already created subwords datasets available online. If you check out the IMDB dataset on TFDS, for instance, by scrolling down you can see datasets with both 8,000 subwords as well as 32,000 subwords in a corpus (along with regular full-word datasets).</br>
+We’ll use TensorFlow’s SubwordTextEncoder and its build_from_corpus function to create one from the reviews dataset we used previously.
