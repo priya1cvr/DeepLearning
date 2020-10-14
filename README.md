@@ -132,3 +132,24 @@ This can further expose an issue affecting all of our models up to this point, i
 Subword Datasets </b> </br>
 There are a number of already created subwords datasets available online. If you check out the IMDB dataset on TFDS, for instance, by scrolling down you can see datasets with both 8,000 subwords as well as 32,000 subwords in a corpus (along with regular full-word datasets).</br>
 We’ll use TensorFlow’s SubwordTextEncoder and its build_from_corpus function to create one from the reviews dataset we used previously.
+
+## RNNs
+
+- Recurrent Neural Networks (RNNs) take in some input x and output some y, but they also feed some of the output of the network back into itself. This may be done over and over, so that with text input, the network has some memory of words that came much earlier in a sequence. <br/>
+- RNNs utilize or store information regarding previous inputs to better understand sequences.<br/>
+- Simple RNNs are not always enough when working with text data. Longer sequences, such as a paragraph, often are difficult to handle, as the simple RNN structure loses information about previous inputs fairly quickly.<br/>
+
+## LSTM
+- Long Short-Term Memory models, or LSTMs, help resolve this by keeping a “cell state” across time. These include a “forget gate”, where the cell can choose whether to keep or forget certain words to carry forward in the sequence.<br/>
+- Another interesting aspect of LSTMs is that they can be bidirectional, meaning that information can be passed both forward (later in the text sequence) and backward (earlier in the text sequence).<br/>
+- The code for an LSTM layer itself is just the LSTM layer from tf.keras.layers, with the number of LSTM cells to use. However, this is typically wrapped within a Bidirectional layer to make use of passing information both forward and backward in the network.
+- tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(64)  # A bidirectional LSTM layer with 64 nodes
+- One thing to note when using a Bidirectional layer is when you look at the model summary, if you put in 64 LSTM nodes, you will actually see a layer shape with 128 nodes (64x2).
+
+
+
+
+
+
+
+
