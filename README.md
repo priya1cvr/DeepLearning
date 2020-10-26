@@ -9,7 +9,7 @@
 ## 9.1 NLP Word Tokenization 
 ## 9.2 NLP Word Embeddings
 ## 9.3 NLP Tweaking Models & SubWords
-
+## 9.4 NLP LSTM With reviews SubWords
 
 
 
